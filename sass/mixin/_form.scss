@@ -1,0 +1,180 @@
+// フォームmixin集
+
+@mixin text($height:100px,$width:200px) {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  height: $height;
+  padding: 0.4em 0.8em;
+  width: $width;
+
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+@mixin radio {
+    display: none;
+
+    & + span{
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 0.2em 0;
+      padding: 0 0 0 2em;
+      position: relative;
+      @include mq("sp"){
+        margin: 0px 0.2em 20px;
+      } 
+
+      &::before{
+         -webkit-transform: translateY(-50%);
+         background: #fff;
+         border: 1px solid rgba(0, 0, 0, 0.16);
+         border-radius: 50%;
+         content: "";
+         display: block;
+         height: 30px;
+         left: 0;
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 30px;
+      }
+
+      &::after{
+          -webkit-transform: translateY(-50%);
+          // background: rgba(0, 0, 0, 0.32);
+          background: $base-color;
+          border: 1px solid transparent;
+          border-radius: 50%;
+          content: "";
+          height: 18px;
+          left: 6px;
+          opacity: 0;
+          padding: 2px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all 0.3s ease 0s;
+          width: 18px;
+      }
+
+    }
+  &:checked+ span::after {
+      opacity: 1;
+  }
+}
+
+@mixin check {
+    display: none;
+
+    & + span{
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 0.2em 0;
+      padding: 0 0 0 1.2em;
+      position: relative;
+
+      &::before{
+        -webkit-transform: translateY(-50%);
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        border-radius: 2px;
+        content: "";
+        display: block;
+        height: 30px;
+        left: -10%;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 30px;
+      }
+
+      &::after{
+        -webkit-transform: translateY(-50%) rotate(-45deg);
+        border-bottom: 4px solid $base-color;
+        border-left: 4px solid $base-color;
+        content: "";
+        display: block;
+        height: 0.8em;
+        left: -10%;
+        margin-top: -0.2em;
+        opacity: 0;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: all 0.3s ease 0s;
+        width: 1.6em;
+      }
+    }
+
+  &:checked + span::after {
+      opacity: 1;
+  } 
+
+}
+
+@mixin submit {
+  -webkit-appearance: none;
+  // background-color: rgba(0, 0, 0, 0.32);
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  margin: 0 0 1em;
+  padding: 0.6em 2em;
+  text-decoration: none;
+  
+  &:focus{
+      outline: none;
+  }
+
+  &::-moz-foucus-inner{
+      border: none;
+      padding: 0;
+  }
+
+}
+
+@mixin select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent url(../img/index_ic05.png) no-repeat center right 28px/12px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 0.4em 0.8em;
+  height: 87%;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:focus {
+    border: 1px solid #bbb;
+    box-shadow: none;
+    outline: none;
+
+  }
+  option:first-child{
+    color: #bbb;
+  }
+}
+

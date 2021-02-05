@@ -1,0 +1,131 @@
+.form {
+  .contact__ttl-wrapper {
+    text-align: left;
+
+    @include mq('sp') {
+      text-align: center;
+    }
+  }
+  .contact__ttl {
+    font-size: 24px;
+    margin-bottom: 16px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-left: 5px solid $base-color;
+
+    @include mq('sp') {
+      display: inline-block;
+      padding: 0 0 4px;
+      font-size: 20px;
+      border-left: none;
+      border-bottom: 2px solid $base-color;
+    }
+  }
+
+  .contact__txt {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    padding-left: 15px;
+
+    @include mq('sp') {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    &--passed {
+      font-size: inherit;
+      color: red;
+      font-weight: bold;
+    }
+
+    &--emp {
+      font-size: inherit;
+      font-weight: bold;
+    }
+  }
+}
+
+.contact-message {
+  color: red;
+}
+
+.contact-form {
+  font-size: 16px;
+  margin: 32px 0;
+  // background-color: #eee;
+  padding: 32px;
+  border-radius: 5px;
+
+  @include mq('sp') {
+    font-size: 14px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+
+  .contact-form__item {
+    margin-bottom: 32px;
+
+    &--bb {
+      // border-bottom: 1px dotted #000;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .contact-form__ttl {
+    margin-bottom: 8px;
+    font-size: 18px;
+    @include mq('sp') {
+      font-size: 14px;
+    }
+  }
+
+  .contact-form__txt {
+    font-size: 16px;
+
+    @include mq('sp') {
+      margin-bottom: 8px;
+    }
+  }
+
+  .contact-form__col {
+    margin-top: 16px;
+  }
+
+  .contact-form__select {
+    font-size: inherit;
+  }
+
+  .contact-form__textarea {
+    font-size: inherit;
+  }
+
+  .contact-form__list {
+    padding-left: 8px;
+    margin-bottom: 8px;
+
+    .contact-form__list-item {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .contact-form__check {
+    text-align: center;
+  }
+
+  .contact-form__message {
+    text-align: center;
+    background-color: #ddd;
+  }
+}
+
+.recuit__btn--sending {
+  display: flex;
+}
