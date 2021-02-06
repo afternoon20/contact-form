@@ -5,6 +5,7 @@
   }
   
   unset($_SESSION['form-flag']);
+  unset($_SESSION['error']);
   // var_dump($_SESSION['form-flag']);
 
   // echo 'フラグ：';

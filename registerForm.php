@@ -1,7 +1,24 @@
 <?php
   require_once('config.php');
+  require_once('validation.php');
   session_start(); 
-  $next = $_POST['submit_flag'];
+
+   // サニタイズ
+  $form = array();
+  if( !empty($_POST) ) {
+	  foreach( $_POST as $key => $value ) {
+		  $form[$key] = htmlspecialchars( $value, ENT_QUOTES);
+	  }
+  }
+
+  // バリデーション
+  $error = validation($form);
+  if(!empty($error)){
+    echo ('不正な操作がありました。もう一度やり直ししてください。');
+    exit();
+  }
+
+  $next = $form['submit_flag'];
 
   if($next === '1'){
     // 修正する場合
@@ -18,17 +35,17 @@
 
     } catch(PDOException $e){
       $error = $e -> getCode();
-      echo 'era';
+      echo ('不正な操作がありました。もう一度やり直ししてください。');
       exit();
     }
 
-    $form =array(
-    'subject' => $_POST['subject'],
-    'name' => $_POST['name'],
-    'email' => $_POST['email'],
-    'tel' => $_POST['tel'],
-    'contents' => $_POST['contents'] 
-  );
+  //   $form =array(
+  //   'subject' => $_POST['subject'],
+  //   'name' => $_POST['name'],
+  //   'email' => $_POST['email'],
+  //   'tel' => $_POST['tel'],
+  //   'contents' => $_POST['contents'] 
+  // );
 
     $sql = "INSERT INTO `Form`(subject,name,email,tel,contents) VALUES(:subject,:name,:email,:tel,:contents)" ;
     $mysql = $pdo -> prepare($sql);
@@ -43,8 +60,8 @@
     try {
       $mysql -> execute();
     } catch(PDOException $e){
-      $error = $e -> getMessage();
-      echo'データベースエラー';
+      $db_error = $e -> getMessage();
+      echo'データベースエラー'.$db_error;
       echo $error;
     };
 

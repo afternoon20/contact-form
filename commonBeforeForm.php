@@ -22,6 +22,7 @@
   if($_SERVER["REQUEST_URI"] === "/register.php"){
     if($_SESSION['form-flag'] !=='1'){
       header('Location: index.php');
+      exit();
     }
   }
 
