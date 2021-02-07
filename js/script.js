@@ -25,6 +25,7 @@
 //   );
 // })();
 
+// トップボタン押下
 $(function () {
   var home = $('.header__link');
   home.click(function () {
@@ -32,5 +33,20 @@ $(function () {
     if (bool) {
       window.location.href = 'topForm.php';
     }
+  });
+});
+
+//送信ボタン押下
+$(function () {
+  var send = $('#send');
+  var sending = $('#sending');
+  var back = $('#back');
+  sending.css({ display: 'none' });
+  send.click(function () {
+    back.attr('disabled', '');
+    back.css({ cursor: 'wait' });
+    send.css({ display: 'none' });
+    send.css({ display: 'none' });
+    sending.css({ display: 'block' });
   });
 });

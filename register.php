@@ -58,10 +58,11 @@
             <!-- ボタン一覧 -->
             <div class="row mt-5">
               <div class="col-12 col-lg-6">
-                <button id="return" class="mt-3 btn btn-secondary btn-lg btn-block" type="submit" name="submit_flag" value="1">修正する</button>
+                <button id="back" class="mt-3 btn btn-secondary btn-lg btn-block" type="submit" name="submit_flag" value="1">修正する</button>
               </div>
               <div class="ol-12 col-lg-6">
                 <button id="send" class="mt-3 btn btn-info btn-lg btn-block" type="submit" name="submit_flag" value="2">送信する</button>
+                <button id="sending" class="mt-3 btn btn-primary btn-lg btn-block" style="cursor: wait;" type="submit" name="submit_flag" value="2" disabled >送信中...</button>
               </div>
             </div>
           </form>

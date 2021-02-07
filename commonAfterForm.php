@@ -6,10 +6,6 @@
   
   unset($_SESSION['form-flag']);
   unset($_SESSION['error']);
-  // var_dump($_SESSION['form-flag']);
-
-  // echo 'フラグ：';
-  // var_dump(($_SESSION['form-flag']));
 
   if($_SERVER["REQUEST_URI"] === "/completed.php"){
       $_SESSION = array();

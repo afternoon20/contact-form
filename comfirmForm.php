@@ -10,14 +10,6 @@
     }
   }
   
-  // $form =array(
-  //   'subject' => $_POST['subject'],
-  //   'name' => $_POST['name'],
-  //   'email' => $_POST['email'],
-  //   'tel' => $_POST['tel'],
-  //   'contents' => $_POST['contents'] 
-  // );
-
   // セッションを保持するフラグ
   $_SESSION['form-flag'] = "1";
 

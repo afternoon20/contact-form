@@ -14,7 +14,6 @@
             ?>
           </div>
           <?php endif ?>
-          
           <form class="contact-form bg-light shadow" action="comfirmForm.php" method="post">
             <!-- 件名 -->
             <div class="contact-form__item">
@@ -59,7 +58,7 @@
                 <?php if( !empty($_SESSION['form']['email'])): ?>
                   <input type="text" class="form-control" name="email" value="<?php echo $_SESSION['form']['email']?>"  maxlength="255"/>
                 <?php else: ?>
-                  <input type="email" class="form-control" name="email"   maxlength="255"/>
+                  <input type="email" class="form-control" name="email" maxlength="255"/>
                 <?php endif; ?>
                   <div class="invalid-feedback">必須項目です。</div>
                 </div>
