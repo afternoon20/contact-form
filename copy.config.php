@@ -11,12 +11,12 @@
   define("DB_ATTR","PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION");
 
   // メール情報
-  // STMPサーバー
-  define("STMP",'STMPサーバー');
+  // SMTPサーバー
+  define("SMTP",'SMTPサーバー');
   // SMTPユーザー
-  define("STMP_USER",'SMTPユーザー');
+  define("SMTP_USER",'SMTPユーザー');
   // SMTPパスワード
-  define("STMP_PASS",'SMTPパスワード');
+  define("SMTP_PASS",'SMTPパスワード');
   // 送信元
   define("MAIL_TO",'送信元');
   //管理メールアドレス
