@@ -44,7 +44,7 @@
 
     } catch(PDOException $e){
       $error = $e -> getCode();
-      echo ('不正な操作がありました。もう一度やり直ししてください。データベース接続エラー');
+      echo ('不正な操作がありました。もう一度やり直ししてください。(データベース接続エラー)');
       exit();
     }
 
@@ -62,6 +62,7 @@
       $db_error = $e -> getMessage();
       echo'データベースエラー'.$db_error;
       echo $error;
+      exit();
     };
 
 
@@ -108,6 +109,7 @@
 
     } catch(Exception $e){
       echo '送信エラー：'."{$mail->ErrorInfo}";
+      exit();
     }
 
     //管理者に送信
@@ -150,6 +152,7 @@
 
     } catch(Exception $e){
       echo '送信エラー：'."{$mail->ErrorInfo}";
+      exit();
     }
 
     //メール送信

@@ -31,7 +31,7 @@
       $error['tel_required'] = "「電話番号」は必須項目です。";
     }
     if(!empty($form['tel']) && !preg_match("/^0\d{9,10}$/", str_replace("-", "", $form['tel']))){
-      $error['tel_def'] = "「電話番号」を正しく入力してください。";
+      $error['tel_def'] = "「電話番号」を正しく入力してください。(半角のみ)";
     }
 
     // 名前のバリデーション

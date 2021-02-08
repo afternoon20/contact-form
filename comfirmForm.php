@@ -9,7 +9,10 @@
       $form[$key] = htmlspecialchars( $value, ENT_QUOTES);
     }
   }
-  
+
+  // 電話番号のハイフンを除去
+  $form['tel'] = str_replace('-','',$form['tel']);
+
   // セッションを保持するフラグ
   $_SESSION['form-flag'] = "1";
 
