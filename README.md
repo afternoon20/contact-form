@@ -22,9 +22,11 @@
   - CentOS
   - MySQL
   - Apache
+  - Gmail
 
 ## 実装中に問題となったところ・工夫したところ
 
+- メール送信に Gmail の SMTP サーバーを使用し、config.php に必要な情報を入力するだけで送信できるようにした。
 - データベースやメールサーバーの設定を config.php で一元管理することで、別環境や別端末での検証も効率的に行うことができるようにした。
 - Postfix を使用してメール送信ができなかったため、PHP のライブラリ「PHPMailer」を使うことでメールを送信することができた。
 - フォームの値を保持しているかどうかのフラグを用意し、保持していない場合はトップ画面に強制遷移するようにした。
@@ -37,6 +39,7 @@
 
 ## 動作確認
 
+- Google の SMTP 経由でメールを送信し、メールが正しく送信しているかの確認
 - 入力チェック(未入力、閾値、文字数オーバー、正しいメールアドレス、電話番号の表記)
 - 各種ブラウザでの動作確認(firefox,Chrome,Opeea,IE)
 - 正しい値を入力し、正常に画面遷移するか。
@@ -53,3 +56,4 @@
 - [PHPMailer/PHPMailer: The classic email sending](https://github.com/PHPMailer/PHPMailer)
 - [PHPMailer でメールを STMP 送信する](https://qiita.com/e__ri/items/857b12e73080019e00b5)
 - [SQL インジェクションとその対策(PHP + PDO)](https://qiita.com/kurodenwa/items/8807e79515c0e2b4dad9)
+- [CentOS の Postfix で Gmail 経由でメールを出す+PHP で送信できない場合。](https://www.ituki-yu2.net/entry/20140805/1407247229)

@@ -23,7 +23,7 @@
   // バリデーション
   $error = validation($form);
   if(!empty($error)){
-    echo ('不正な操作がありました。もう一度やり直ししてください。');
+    echo ('不正な操作がありました。もう一度やり直ししてください。(バリデーションエラー)');
     exit();
   }
 
@@ -44,7 +44,7 @@
 
     } catch(PDOException $e){
       $error = $e -> getCode();
-      echo ('不正な操作がありました。もう一度やり直ししてください。');
+      echo ('不正な操作がありました。もう一度やり直ししてください。データベース接続エラー');
       exit();
     }
 
@@ -76,10 +76,10 @@
     try{
       // SMTPサーバー設定
       $mail->isSMTP();
-      $mail->Host       = STMP;
+      $mail->Host       = SMTP;
       $mail->SMTPAuth   = true;
-      $mail->Username   = STMP_USER;
-      $mail->Password   = STMP_PASS;
+      $mail->Username   = SMTP_USER;
+      $mail->Password   = SMTP_PASS;
       $mail->SMTPSecure = 'tls';
       $mail->Port       = 587;
       $mail->IsHTML(false);
@@ -118,10 +118,10 @@
     try{
       // SMTPサーバー設定
       $mail->isSMTP();
-      $mail->Host       = STMP;
+      $mail->Host       = SMTP;
       $mail->SMTPAuth   = true;
-      $mail->Username   = STMP_USER;
-      $mail->Password   = STMP_PASS;
+      $mail->Username   = SMTP_USER;
+      $mail->Password   = SMTP_PASS;
       $mail->SMTPSecure = 'tls';
       $mail->Port       = 587;
       $mail->IsHTML(false);
