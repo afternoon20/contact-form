@@ -31,15 +31,15 @@
       $error['tel_required'] = "「電話番号」は必須項目です。";
     }
     if(!empty($form['tel']) && !preg_match("/^0\d{9,10}$/", str_replace("-", "", $form['tel']))){
-      $error['tel_def'] = "「電話番号」を正しく入力してください。(半角のみ)";
+      $error['tel_def'] = "「電話番号」を正しく入力してください。(半角数字ハイフンのみ)";
     }
 
-    // 名前のバリデーション
+    // お問い合わせ内容のバリデーション
 	  if(empty($form['contents'])) {
       $error['contents_required'] = "「お問い合わせ内容」は必須項目です。";
     }
     if(mb_strlen($form["name"]) > 256){
-      $error['contents_def'] = "「お問い合わせ」は256文字以内で入力ください。";
+      $error['contents_def'] = "「お問い合わせ」は255文字以内で入力ください。";
     }
     return $error;
   }

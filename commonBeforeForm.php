@@ -29,6 +29,7 @@
   if($_SERVER["REQUEST_URI"] === "/completed.php"){
     if($_SESSION['form-flag'] !=='1'){
       header('Location: index.php');
+      exit();
     }
   }
 ?>

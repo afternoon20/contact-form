@@ -33,10 +33,10 @@
     // 修正する場合
     $_SESSION['submit_flag'] =$next;
     header('Location: index.php');
+    exit();
     
   } elseif($next === '2'){
     // 送信する場合
-    
     //データベース登録
     try{
       $pdo = new PDO(HOST,ID,PASS);
@@ -188,5 +188,6 @@
 
     // 完了画面へ遷移
     header('Location: completed.php');
+    exit();
   }
 ?>

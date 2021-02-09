@@ -91,7 +91,7 @@
               </div>
             </div>
             <input type="hidden" name="flag" value="1" />
-            <button id="send" class="mt-5 btn btn-info btn-lg btn-block" type="submit">確認する</button>
+            <button id="send--top" class="mt-5 btn btn-info btn-lg btn-block" type="submit">確認する</button>
           </form>
         </div>
       </div>

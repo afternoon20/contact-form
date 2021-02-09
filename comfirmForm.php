@@ -32,4 +32,5 @@
   }
   // 確認画面へ遷移
   header('Location: register.php');
+  exit();
 ?>
